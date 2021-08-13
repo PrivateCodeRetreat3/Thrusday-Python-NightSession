@@ -16,6 +16,12 @@ def print_grid(width, height, board):
     return t
 
 
+def advance_turn(board):
+    def next_turn(x,y):
+        return False
+    return next_turn
+
+
 class RegressionTest(unittest.TestCase):
     def setUp(self):
         self.reporter = None #Use the first difftool found on your system
@@ -30,6 +36,8 @@ class RegressionTest(unittest.TestCase):
         board = lambda x, y: x == 1 and y == 2
         s.add_frame(print_grid(5,4,lambda x,y: "x" if board(x,y) else "."))
         #advance the board
+        board = advance_turn(board)
+        s.add_frame(print_grid(5, 4, lambda x, y: "x" if board(x, y) else "."))
         #verify that the board is empty
 
 

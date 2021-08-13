@@ -1,8 +1,6 @@
-# ApprovalTests.Python.StarterProject
-Starter project for getting approvaltests up and running 
 
-## To setup in pycharm
-* Import project
-* Go File > Settings > Tools > Python Integered Tools > Testing > Default Test Runner > Unittests
-* From the command line run `pip install approvaltests`
-* Open test file and click the green arrows by the tests to run
+Any live cell with fewer than two live neighbours dies, as if by underpopulation.
+Any live cell with two or three live neighbours lives on to the next generation.
+   count is # of living neighbors
+Any live cell with more than three live neighbours dies, as if by overpopulation.
+Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.

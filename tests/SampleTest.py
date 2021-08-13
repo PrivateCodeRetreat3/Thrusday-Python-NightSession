@@ -7,6 +7,11 @@ from approvaltests.reporters.generic_diff_reporter_factory import GenericDiffRep
 from approvaltests.storyboard import Storyboard
 
 
+def print_grid(width, height, board):
+    t= "the board"
+    return t
+
+
 class RegressionTest(unittest.TestCase):
     def setUp(self):
         self.reporter = None #Use the first difftool found on your system
@@ -18,6 +23,8 @@ class RegressionTest(unittest.TestCase):
     def test_single_square_dies(self):
         s = Storyboard()
         #create a board with 1,2 alive
+        board = lambda x, y: x == 1 and y == 2
+        s.add_frame(print_grid(5,5,board))
         #advance the board
         #verify that the board is empty
 

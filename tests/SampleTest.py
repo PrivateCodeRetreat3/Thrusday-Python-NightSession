@@ -23,7 +23,7 @@ def advance_turn(board):
                 board(x , y - 1)               + board(x , y + 1) + \
                 board(x + 1, y - 1) + board(x + 1, y) + board(x + 1, y + 1)
         #  or two neighbors and you are alive
-        return living_neighbors == 3 or living_neighbors == 2 and board(x,y)
+        return living_neighbors == 3 or (living_neighbors == 2 and board(x,y))
     return next_turn
 
 
@@ -41,6 +41,11 @@ class RegressionTest(unittest.TestCase):
 
     def test_square_survives(self):
         board = lambda x, y: 1 <= x <= 2 and 1 <= y <= 2
+        self.verify_game_of_life_board(board)
+
+# look at https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life  see visual example Oscillator Beacon
+    def test_square_blinker(self):
+        board = lambda x, y: (0 <= x <= 1 and 0 <= y <= 1) or (2 <= x <= 3 and 2 <= y <= 3)
         self.verify_game_of_life_board(board)
 
     # a cell with 2 living neighbors becomes alive

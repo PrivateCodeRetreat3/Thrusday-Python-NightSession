@@ -17,8 +17,10 @@ def print_grid(width, height, board):
 
 
 def advance_turn(board):
+    #next turn tells you is that coordinate alive or dead
     def next_turn(x,y):
-        return False
+        count = 0
+        return count == 3
     return next_turn
 
 

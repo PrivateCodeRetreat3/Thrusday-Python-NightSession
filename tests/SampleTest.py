@@ -22,7 +22,8 @@ def advance_turn(board):
         living_neighbors = board(x-1, y-1)+ board(x-1,y) + board(x-1, y+1) +\
                 board(x , y - 1)               + board(x , y + 1) + \
                 board(x + 1, y - 1) + board(x + 1, y) + board(x + 1, y + 1)
-        return living_neighbors == 3
+        #  or two neighbors and you are alive
+        return living_neighbors == 3 or living_neighbors == 2 and board(x,y)
     return next_turn
 
 

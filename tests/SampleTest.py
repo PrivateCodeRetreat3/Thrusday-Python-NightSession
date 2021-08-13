@@ -8,7 +8,11 @@ from approvaltests.storyboard import Storyboard
 
 
 def print_grid(width, height, board):
-    t= "the board"
+    t= ""
+    for y in range (0  , height):
+        for x in range (0, width):
+            t+= ". "
+        t+="\n"
     return t
 
 
@@ -24,7 +28,7 @@ class RegressionTest(unittest.TestCase):
         s = Storyboard()
         #create a board with 1,2 alive
         board = lambda x, y: x == 1 and y == 2
-        s.add_frame(print_grid(5,5,board))
+        s.add_frame(print_grid(5,4,board))
         #advance the board
         #verify that the board is empty
 

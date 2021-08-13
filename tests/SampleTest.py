@@ -42,6 +42,11 @@ class RegressionTest(unittest.TestCase):
         board = lambda x, y: 1 <= x <= 2 and 1 <= y <= 2
         self.verify_game_of_life_board(board)
 
+    # a cell with 2 living neighbors becomes alive
+    def test_blinker(self):
+        board = lambda x, y: 1 <= x <= 3 and y == 2
+        self.verify_game_of_life_board(board)
+
     def verify_game_of_life_board(self, board):
         s = Storyboard()
         # create a board with 1,2 alive
